@@ -16,7 +16,9 @@ def index(request):
 
 def entry_detail(request, entry_id):
 	entry = Entry.objects.get(pk=entry_id)
+	cases = entry.case.all()
 
-	context = {'entry': entry}
+	context = {'entry': entry,
+				'cases': cases }
 
 	return render(request, 'lexicon/entry.html', context)

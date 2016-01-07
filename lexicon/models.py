@@ -29,6 +29,9 @@ class Case(models.Model):
 
 	case_function = models.CharField(max_length=10, choices=case_function_choices, default=NOUN)
 
+	case_definition = models.TextField(default='')
+	case_example = models.TextField(null=True, blank=True)
+
 	def __str__(self):
 		return self.case_name
 

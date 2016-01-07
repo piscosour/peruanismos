@@ -1,1 +1,10 @@
 <h1>{{ entry.entry_name }}</h1>
+{% for case in cases %}
+<h2>{{ case.case_name }}</h2>
+<p><strong>{{ case.case_function }}</strong> {{ case.case_definition }}</p>
+
+{% if case.case_example %}
+<p><em>{{ case.case_example }}</em></p>
+{% endif %}
+
+{% endfor %}
