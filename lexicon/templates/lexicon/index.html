@@ -1,0 +1,9 @@
+{% if entry_list %}
+	<ul>
+	{% for entry in entry_list %}
+		<li><a href="{% url 'lexicon:entry_detail' entry.id %}">{{ entry.entry_name }}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No entries in the lexicon.</p>
+{% endif %}
