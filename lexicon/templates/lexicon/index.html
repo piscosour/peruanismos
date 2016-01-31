@@ -1,9 +1,33 @@
+<html>
+<head>
+
+<title>Peruanismos</title>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<style>
+.entry-card {
+	padding: 10px;
+	display: inline-block;
+	height: 100px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="container">
+
 {% if entry_list %}
-	<ul>
 	{% for entry in entry_list %}
-		<li><a href="{% url 'lexicon:entry_detail' entry.id %}">{{ entry.entry_name }}</a></li>
+	<div class="col-xs-3 entry-card">
+		<a href="{% url 'lexicon:entry_detail' entry.id %}"><h2>{{ entry.entry_name }}</h2></a>
+	</div>
 	{% endfor %}
-	</ul>
 {% else %}
 	<p>No entries in the lexicon.</p>
 {% endif %}
+
+</div>
+</body>
+</html>
